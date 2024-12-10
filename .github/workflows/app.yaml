@@ -39,7 +39,7 @@ jobs:
 
     - name: Update Deployment Image 
       run: |
-        sed -i "s/bd004ae0921ff5bb21bafb6304b2dc09223a391b/${{ github.sha }}/g" mnt/c/Users/eugen/OneDrive/Desktop/GitWorks/Kubernetes/K8S-Resume/app.yaml
+        sed -i "s/bd004ae0921ff5bb21bafb6304b2dc09223a391b/${{ github.sha }}/g" /mnt/c/Users/eugen/OneDrive/Desktop/GitWorks/Kubernetes/K8S-Resume/app.yaml
 
     - name: Deploy to EKS
       run: kubectl apply -f k8s/  --validate=false # Path to your Kubernetes config files
