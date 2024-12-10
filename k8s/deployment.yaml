@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: resume-app
 spec:
-  replicas: 0
+  replicas: 5
   selector:
     matchLabels:
       name: resume-app  # This should match the label in the pod template
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: resume-app
-          image: 3ac8f1059ae021f7e399d2449741b11b11b38763
+          image: eugenekofi/resume-app
           ports:
             - containerPort: 80
 
