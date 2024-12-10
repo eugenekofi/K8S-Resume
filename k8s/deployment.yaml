@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: resume-app  # This should match the label in the pod template
+  template:
+    metadata:
+      labels:
+        name: resume-app  # Label that the service will use
+    spec:
+      containers:
+        - name: resume-app
+          image: eugenekofi/resume-app
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-service
+spec:
+  type: NodePort
+  selector:
+    name: resume-app  # Match the label from the deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
