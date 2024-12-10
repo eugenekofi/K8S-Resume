@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: resume-app
-          image: eugenekofi/resume-app
+          image: 3ac8f1059ae021f7e399d2449741b11b11b38763
           ports:
             - containerPort: 80
 
