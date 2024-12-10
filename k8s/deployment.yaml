@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: resume-app
 spec:
-  replicas: 5
+  replicas: 0
   selector:
     matchLabels:
       name: resume-app  # This should match the label in the pod template
